@@ -44,7 +44,38 @@
                     </div>
                 </fieldset>
                 <div class="login btn">로그인</div>
+                <!-- //header -->
+
+                <div id="UserProfile_popup" style="opacity: 1;">
+                    <div class="UserProfile_container">
+                        <div class="UserProfile_link">
+                            <div class="Userprofile_main">
+                                <div class="Userprofile_img"></div>
+                            </div>
+                            <div class="UserProfile_UserName">
+                                <p>닉네임</p>
+                            </div>
+                            <div class="UserProfile_line"></div>
+                            <div class="UserProfile_bottom">
+                                <div class="UserProfile_codes">
+                                    <p>내 코드</p>
+                                    <img src="./assets/img/profile_arrow.svg" alt="">
+                                </div>
+                                <div class="UserProfile_setting" href="(설정 주소)">
+                                    <img src="./assets/img/profile_setting.svg" alt="">
+                                    <p>설정</p>
+                                </div>
+                                <button class="UserProfile_signout">
+                                    <img src="./assets/img/profile_logout.svg" alt="">
+                                    <p>로그아웃</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //UserProfile_popup -->
+                </div>
             </div>
+            <!-- //popup_profill -->
         </div>
     </header>
     <!-- //header -->
@@ -90,6 +121,7 @@
                 <div class="sign__up__btn">SIGN UP</div>
             </div>
             <!-- //sign__menu -->
+
             <div class="sign__in">
                 <form action="#" name="#" method="post">
                     <fieldset>
@@ -164,6 +196,32 @@
     </div>
     <!-- //login -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var saveButton = document.querySelector('.header_codelink_input .btn'); // 저장 버튼 선택
+            var popup = document.getElementById('UserProfile_popup'); // 팝업창 선택
+            var closeButton = document.querySelector('.UserProfile_signout'); // 닫기 버튼 선택
+
+            // 저장 버튼 클릭 이벤트 핸들러
+            saveButton.addEventListener('click', function () {
+                popup.style.display = 'block'; // 팝업창 표시
+            });
+
+            // 팝업창 밖 클릭 시 팝업창 숨기기 이벤트 핸들러
+            window.addEventListener('click', function (event) {
+                if (event.target === popup) {
+                    popup.style.display = 'none'; // 팝업창 숨기기
+                }
+            });
+
+            // 선택적: 팝업 내부에서 로그아웃 버튼 클릭 시 팝업창도 숨기기
+            closeButton.addEventListener('click', function () {
+                popup.style.display = 'none'; // 팝업창 숨기기
+            });
+        });
+    </script>
     <script>
         $(function () {
             // sign    
