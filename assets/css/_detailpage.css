@@ -1,98 +1,103 @@
-#detail {
+#deatail__Wrap {
     width: 100%;
     height: 100vh;
     background-color: var(--white);
+    padding-top: 100px;
 
 
-    .detail__wrap {
-        width: 85rem;
-        height: 650px;
+    .detail {
+        width: 90%;
+        height: auto;
         background-color: var(--white);
+        box-shadow: inset;
         margin: 0 auto;
-        border-radius: 30px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
         padding: 10px 3% 0 3%;
-    }
 
-    .detail_tap {
-        width: 100%;
-        display: flex;
-        padding: 10px 6% 0 6%;
-        margin: 0 auto;
-        text-align: center;
-        justify-content: center;
-        border-bottom: 1px solid var(--white300);
+        .detail__top {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            padding: 40px 6% 0 6%;
+            border-bottom: 1px solid var(--white300);
 
-        .detail__info,
-        .detail__code {
-            font-size: 32px;
-            font-weight: 600;
-            margin: 20px 40px 20px 40px;
-            background-color: transparent;
-
-            p {
-                color: var(--white200);
+            .code__info,
+            .code__detail {
+                padding: 10px;
+                font-size: 24px;
+                margin: 0 40px 10px 40px;
                 cursor: pointer;
+                color: var(--white400);
+
             }
         }
-    }
 
-    .detail_contents {
-        width: 100%;
-        display: flex;
-        /* display: none; */
-
-        .detail__img,
-        .detail__user {
+        .detail__contents {
+            display: flex;
             width: 100%;
-            padding: 1rem
-        }
-
-        .cotent__info {
+            height: auto;
 
             .detail__img {
-                .test__img {
+                width: 50%;
+                padding: 0.8rem 1.6rem;
+
+
+                .detail__test {
                     width: 100%;
-                    height: 500px;
-                    background-color: #b5b5b5;
+                    height: auto;
+                    background-color: #4e4e4e;
                     border-radius: 30px;
-                    margin-bottom: 20px;
+
+                    img {
+                        border-radius: 30px;
+                    }
                 }
             }
 
             .detail__user {
+                width: 50%;
+                padding: 0.8rem 1.6rem;
+
                 .user__top {
                     display: flex;
                     justify-content: right;
+                    padding: 0 0 0 20px;
+                    margin-bottom: 20px;
 
-                    .site__delete,
-                    .site__visit {
-                        padding: 1rem;
-                        background-color: var(--white300);
+                    .user__visit,
+                    .user__delete {
+                        background-color: var(--white400);
+                        padding: 10px;
                         border-radius: 30px;
-                        margin-left: 1rem;
+                        margin: 10px;
+                        font-size: 20px;
+                        width: 6.25rem;
                         cursor: pointer;
                     }
 
-                    .site__delete:hover,
-                    .site__visit:hover {
+                    .user__visit:hover,
+                    .user__delete:hover {
                         background-color: var(--pointColor);
                     }
                 }
 
-                .img__name {
+                .user__name {
                     font-size: 24px;
                     font-weight: 600;
-                    padding: 2rem;
+                    border-bottom: 1px solid var(--white300);
+                    padding: 10px;
                 }
 
-                .img__desc {
+                .user__memo {
                     font-size: 20px;
-                    padding: 0 2rem 0 2rem;
+                    padding: 10px;
                 }
             }
-        }
 
+
+        }
 
     }
 }
