@@ -23,6 +23,7 @@
             padding: 40px 6% 0 6%;
             border-bottom: 1px solid var(--white300);
 
+
             .code__info,
             .code__detail {
                 padding: 10px;
@@ -30,6 +31,11 @@
                 margin: 0 40px 10px 40px;
                 cursor: pointer;
                 color: var(--white400);
+
+                &.active>p {
+                    color: var(--pointColor);
+                    /* 원하는 색상으로 변경 */
+                }
 
             }
         }
@@ -42,7 +48,7 @@
             .detail__info {
                 width: 100%;
                 display: flex;
-                display: none;
+                /* display: none; */
 
                 .detail__img {
                     width: 50%;
@@ -154,8 +160,6 @@
                             margin-top: 10px;
                         }
 
-
-
                     }
 
                     .list__title {
@@ -195,4 +199,8 @@
         /* detail__contents */
 
     }
+}
+
+.hidden {
+    display: none !important;
 }
