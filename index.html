@@ -175,7 +175,58 @@
     </section>
     <!-- //section (code, folder, feed) -->
 
-    <div class="modal__outcontainer"></div>
+    <div id="modal__outcontainer">
+        <div class="modal__container mt100">
+            <div class="edit__container">
+                <div class="edit__top">
+                    <div class="edut__menu">
+                        <div class="edit__code">
+                            <p>코드편집</p>
+                        </div>
+                        <div class="code__list">
+                            <p>코드분류</p>
+                        </div>
+                        <div class="code__add">
+                            <p>코드추가</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- //edit__top 모달 탭 메뉴 -->
+
+                <div class="edit__contents">
+                    <div class="edit__list">
+                        <div class="edit__in">
+                            <div class="site__info">
+                                <div class="site__img">
+                                    <img src="/assets/img/naver.png" alt="">
+                                </div>
+                                <div class="site_in">
+                                    <div class="site__name">네이버</div>
+                                    <div class="site__memo">네이버 설명</div>
+                                </div>
+
+                            </div>
+                            <div class="user__edit">
+                                <input type="text" class="user_site_title" placeholder="사용자 타이틀" id="edit__title" value>
+                                <textarea name="user_site_memo" id="user_site_memo" placeholder="사용자 지정 메모"></textarea>
+                                <button class="user_site_delete">
+                                    <p>삭제하기</p>
+                                </button>
+                                <button class="user_site_save">
+                                    <p>저장하기</p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //코드 편집창 -->
+                    <div class="list__list"></div>
+                    <!-- //코드 분류창 -->
+                    <div class="add__list"></div>
+                    <!-- 코드 추가창 -->
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer id="footer">
         <div class="container">

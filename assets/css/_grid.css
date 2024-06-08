@@ -129,3 +129,149 @@
         }
     }
 }
+
+/* grid 안에 있는 모달 scss */
+
+#modal__outcontainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(18, 19, 20, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    align-content: center;
+
+    .modal__container {
+        display: flex;
+        margin: 0 auto;
+
+        .edit__container {
+            width: 70%;
+            max-width: 1200px;
+            border-radius: 30px;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            background-color: #fff;
+            top: 0;
+            margin: 0 auto;
+            padding: 0 2rem 2rem 2rem;
+
+            .edit__top {
+                display: flex;
+                border-bottom: .1rem solid #e6e6e6;
+                padding: 1rem;
+                justify-content: center;
+                font-size: 32px;
+                font-weight: 600;
+                color: var(--white500);
+
+                .edut__menu {
+                    display: flex;
+
+                    .edit__code,
+                    .code__list,
+                    .code__add {
+                        padding: 20px;
+                        margin-left: 20px;
+                        cursor: pointer;
+                    }
+
+                }
+
+            }
+
+            /* //edit__top */
+
+            .edit__contents {
+                width: 100%;
+
+                .edit__in {
+                    width: 100%;
+                    margin-top: 30px;
+                    display: flex;
+
+                    .site__info {
+                        width: 50%;
+                        padding: 0.8rem 1.6rem;
+
+                        .site__img {
+                            width: 100%;
+                            margin-bottom: 20px;
+
+                            img {
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                                width: 100%;
+                                height: auto;
+                                border-radius: 30px;
+                            }
+                        }
+
+                        .site_in {
+                            width: 100%;
+
+                            .site__name {
+                                font-size: 24px;
+                                font-weight: 600;
+                            }
+
+                            .site__memo {
+                                font-size: 20px;
+                            }
+                        }
+
+
+                    }
+
+                    .user__edit {
+                        width: 50%;
+                        padding: 0.8rem 1.6rem;
+
+                        .user_site_title {
+                            width: 100%;
+                            padding: 10px 20px 10px 20px;
+                            font-size: 20px;
+                            box-sizing: border-box;
+                            border-radius: 30px;
+                            border: 1px solid var(--white400);
+                            margin-bottom: 1rem;
+                        }
+
+                        #user_site_memo {
+                            width: 100%;
+                            height: 20rem;
+                            text-align: left;
+                            resize: none;
+                            overflow-y: auto;
+                            border-radius: 30px;
+                            border: 1px solid var(--white400);
+                            padding: 20px;
+                            box-sizing: border-box;
+                            font-size: 16px;
+                            margin-bottom: 20px;
+                        }
+
+                        .user_site_delete,
+                        .user_site_save {
+                            width: 100%;
+                            background-color: var(--white400);
+                            border-radius: 30px;
+                            font-size: 24px;
+                            padding: 5px;
+                            margin-bottom: 10px;
+
+                        }
+                    }
+                }
+
+            }
+
+
+
+
+        }
+    }
+}
