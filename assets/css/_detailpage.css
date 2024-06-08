@@ -1,0 +1,98 @@
+#detail {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--white);
+
+
+    .detail__wrap {
+        width: 85rem;
+        height: 650px;
+        background-color: var(--white);
+        margin: 0 auto;
+        border-radius: 30px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        padding: 10px 3% 0 3%;
+    }
+
+    .detail_tap {
+        width: 100%;
+        display: flex;
+        padding: 10px 6% 0 6%;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+        border-bottom: 1px solid var(--white300);
+
+        .detail__info,
+        .detail__code {
+            font-size: 32px;
+            font-weight: 600;
+            margin: 20px 40px 20px 40px;
+            background-color: transparent;
+
+            p {
+                color: var(--white200);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .detail_contents {
+        width: 100%;
+        display: flex;
+        /* display: none; */
+
+        .detail__img,
+        .detail__user {
+            width: 100%;
+            padding: 1rem
+        }
+
+        .cotent__info {
+
+            .detail__img {
+                .test__img {
+                    width: 100%;
+                    height: 500px;
+                    background-color: #b5b5b5;
+                    border-radius: 30px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .detail__user {
+                .user__top {
+                    display: flex;
+                    justify-content: right;
+
+                    .site__delete,
+                    .site__visit {
+                        padding: 1rem;
+                        background-color: var(--white300);
+                        border-radius: 30px;
+                        margin-left: 1rem;
+                        cursor: pointer;
+                    }
+
+                    .site__delete:hover,
+                    .site__visit:hover {
+                        background-color: var(--pointColor);
+                    }
+                }
+
+                .img__name {
+                    font-size: 24px;
+                    font-weight: 600;
+                    padding: 2rem;
+                }
+
+                .img__desc {
+                    font-size: 20px;
+                    padding: 0 2rem 0 2rem;
+                }
+            }
+        }
+
+
+    }
+}

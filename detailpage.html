@@ -39,7 +39,8 @@
                                 <p class="msg" id="signin__Email__comment"></p>
                             </div>
                             <div>
-                                <input type="password" name="signin__Pass" id="signin__Pass" autocomplete="off" required>
+                                <input type="password" name="signin__Pass" id="signin__Pass" autocomplete="off"
+                                    required>
                                 <div class="signin__Pass_placeholder">비밀번호</div>
                                 <p class="msg" id="signin__Pass__comment"></p>
                             </div>
@@ -56,18 +57,21 @@
                             <form id="signup__Form" action="signup.php" name="signup" method="post"
                                 onsubmit="return signupChecks()">
                                 <div>
-                                    <input type="email" name="signup__Email" id="signup__Email" autocomplete="off" required>
+                                    <input type="email" name="signup__Email" id="signup__Email" autocomplete="off"
+                                        required>
                                     <div class="signup__Emaill_placeholder">이메일</div>
                                     <p class="msg" id="signup__Email__comment"></p>
                                 </div>
                                 <div>
-                                    <input type="password" name="signup__Pass" id="signup__Pass" autocomplete="off" required>
+                                    <input type="password" name="signup__Pass" id="signup__Pass" autocomplete="off"
+                                        required>
                                     <div class="signup__Pass_placeholder">비밀번호</div>
                                     <p class="msg" id="signup__Pass__comment"></p>
                                 </div>
                                 <div>
                                     <label for="signup__PassC" class="hidden">password checking</label>
-                                    <input type="password" name="signup__PassC" id="signup__PassC" autocomplete="off" required>
+                                    <input type="password" name="signup__PassC" id="signup__PassC" autocomplete="off"
+                                        required>
                                     <div class="signup__PassC_placeholder">비밀번호 확인</div>
                                     <p class="msg" id="signup__PassC__comment"></p>
                                 </div>
@@ -104,90 +108,43 @@
     </header>
     <!-- //header -->
 
-    <main id="main">
-        <h2 class="main__title">Cod<em>e</em> pin</h2>
-        <span>Which site's <em>code</em> should I save?</span>
-        <div class="link__input">
-            <input type="text" name="link__input" placeholder="Login and save the code">
-        </div>
-    </main>
-    <!-- //main -->
+    <div class="pt114"></div>
 
-    <section id="grid">
-        <div class="grid__control">
-            <div class="section__num"><em>6</em> CODE</div>
-            <div class="Add__button hidden"><button></button></div>
-        </div>
-        <article class="grid__inner">
-            <div class="grid__item">
-                <div class="grid__img"></div>
-                <div class="grid__info">
-                    <div class="grid__title">코드 제목입니다</div>
-                    <div class="grid__description">코드 설명입니다</div>
-                </div>
-                <div class="grid__eddit"></div>
-            </div>
-            <div class="grid__item">
-                <div class="grid__img"></div>
-                <div class="grid__info">
-                    <div class="grid__title">코드 제목입니다</div>
-                    <div class="grid__description">코드 설명입니다</div>
-                </div>
-                <div class="grid__eddit"></div>
-            </div>
-            <div class="grid__item">
-                <div class="grid__img"></div>
-                <div class="grid__info">
-                    <div class="grid__title">코드 제목입니다</div>
-                    <div class="grid__description">코드 설명입니다</div>
-                </div>
-                <div class="grid__eddit"></div>
-            </div>
-            <div class="grid__item">
-                <div class="grid__img"></div>
-                <div class="grid__info">
-                    <div class="grid__title">코드 제목입니다</div>
-                    <div class="grid__description">코드 설명입니다</div>
-                </div>
-                <div class="grid__eddit"></div>
-            </div>
-            <div class="grid__item">
-                <div class="grid__img"></div>
-                <div class="grid__info">
-                    <div class="grid__title">코드 제목입니다</div>
-                    <div class="grid__description">코드 설명입니다</div>
-                </div>
-                <div class="grid__eddit"></div>
-            </div>
-            <div class="grid__item">
-                <div class="grid__img"></div>
-                <div class="grid__info">
-                    <div class="grid__title">코드 제목입니다</div>
-                    <div class="grid__description">코드 설명입니다</div>
-                </div>
-                <div class="grid__eddit"></div>
-            </div>
-        </article>
-    </section>
-    <!-- //section (code, folder, feed) -->
-
-    <footer id="footer">
+    <section id="detail">
         <div class="container">
-            <h4><em>Team.</em> CodePin</h4>
-            <div class="developer"><span>YiHyun Kim</span><a href="mailto:wlsakf23@gmail.com">wlsakf23@gmail.com</a>
-            </div>
-            <div class="developer"><span>JinWoo Kim</span><a href="mailto:kjw040416@gmail.com">kjw040416@gmail.com</a>
-            </div>
-            <div class="developer"><span>SeonHwa Choe</span><a href="mailto:liarusen@gmail.com">liarusen@gmail.com</a>
+            <div class="detail__wrap">
+                <div class="detail_tap">
+                    <button class="detail__info">
+                        <p>코드 정보</p>
+                    </button>
+                    <button class="detail__code">
+                        <p>상세 코드</p>
+                    </button>
+                </div>
+                <!-- //detail_tap -->
+
+                <div class="detail_contents">
+                    <div class="cotent__info">
+                        <div class="detail__img">
+                            <div class="test__img"></div>
+                        </div>
+                        <div class="detail__user">
+                            <div class="user__top">
+                                <button class="site__visit">
+                                    <a href="#">사이트 방문</a>
+                                </button>
+                                <button class="site__delete">삭제하기</button>
+                            </div>
+                            <div class="img__name">네이버</div>
+                            <div class="img__desc">네이버 메인에서 다양한 정보와 유용한 컨텐츠를 만나 보세요</div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-        <div class="copyright">
-            COPYRIGHT © Codepin. All Rights Reserved.
-        </div>
-    </footer>
-    <!-- //footer -->
-    <script src="/assets/script/jquery-3.6.0.min.js"></script>
-    <script src="/assets/script/sign.js"></script>
+    </section>
+
 </body>
 
 </html>

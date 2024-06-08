@@ -1,14 +1,14 @@
 @charset "utf-8";
 
 /* 기본 설정 */
-@import "font.css";
-@import "vars.css";
-@import "resets.css";
-@import "commons.css";
-@import "sign.css";
-@import "main-Intro.css";
+@import "_resets.css";
+@import "_common.css";
+@import "_var.css";
 
 /* 섹션 설정 */
-@import "header.css";
-@import "mainIntro.css";
-@import "footer.css";
+@import "_header.css";
+@import "_main.css";
+@import "_footer.css";
+@import "_grid.css";
+@import "_sign.css";
+@import "_detailpage.css";

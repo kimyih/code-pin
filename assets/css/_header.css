@@ -1,0 +1,64 @@
+#header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 114px;
+    background-color: #00000020;
+    backdrop-filter: blur(5px);
+
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            margin-left: -2%;
+
+            a {
+                h1 {
+                    color: var(--white);
+                    line-height: 3rem;
+                    font-size: 3rem;
+                    font-weight: 900;
+
+                    em {
+                        color: var(--pointColor);
+                    }
+                }
+            }
+        }
+
+        #selector {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            button {
+                margin: 0 20px 0 20px;
+                background-color: #00000000;
+                width: 150px;
+                height: 70px;
+                color: var(--white);
+                font-size: 1.5rem;
+                font-weight: 600;
+                cursor: pointer;
+
+                &.active {
+                    color: var(--pointColor);
+                }
+            }
+        }
+
+        .login {
+            width: 116px;
+            height: 36px;
+            background-color: #00000000;
+            color: var(--white);
+            border: 1px solid var(--white);
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+    }
+}

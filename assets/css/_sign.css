@@ -1,0 +1,301 @@
+#sign__wrap {
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0d0d0d50;
+    position: absolute;
+    z-index: 10000;
+
+    .sign__inner {
+        margin: 0 auto;
+        width: 600px;
+        background-color: var(--black);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50px;
+
+        .sign__close {
+            background: none;
+            padding: 15px;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            right: 50px;
+            top: 36px;
+
+            &::after {
+                content: '';
+                display: inline-block;
+                width: 36px;
+                height: 36px;
+                background: url('../icon/x_icon.svg') no-repeat center;
+                background-size: contain;
+                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+            }
+        }
+
+
+        .sign__in {
+            margin: 0 74px;
+            padding: 226px 0 130px 0;
+            text-align: center;
+
+            h3 {
+                text-align: left;
+                width: 300px;
+                top: 96px;
+                left: 96px;
+                position: absolute;
+                font-size: 2.25rem;
+                font-weight: 800;
+                color: var(--white);
+                z-index: 1;
+
+                &::after {
+                    left: -22px;
+                    top: -35px;
+                    content: 'sign in';
+                    color: var(--black600);
+                    font-size: 4rem;
+                    font-weight: 800;
+                    position: absolute;
+                    width: 100%;
+                    z-index: -10;
+                }
+            }
+
+            .sign__comment {
+
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: var(--white);
+
+                em {
+                    color: var(--pointColor);
+                }
+            }
+
+            form {
+                padding-top: 58px;
+                display: flex;
+                flex-direction: column;
+
+                div {
+                    position: relative;
+                    div{
+                        position: absolute;
+                        left: 20px;
+                        top: 0;
+                        z-index: 100;
+                        color: var(--black600);
+                    }
+                    input {
+                        min-height: 60px;
+                        width: 100%;
+                        padding: 20px;
+                        border: none;
+                        border-radius: 50px;
+                        font-size: 1rem;
+                        margin-bottom: 40px;
+
+                        &::placeholder {
+                            padding-left: 2px;
+                            font-size: 1.125rem;
+                            font-weight: 500;
+                            color: var(--black700);
+                        }
+                    }
+                }
+
+                button {
+                    margin-top: 32px;
+                    min-height: 60px;
+                    border-radius: 50px;
+                    background-color: var(--pointColor);
+                    color: #fff;
+                    cursor: pointer;
+                    margin-bottom: 25px;
+                    padding: 0;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                }
+
+                .msg {
+                    display: none;
+                }
+            }
+
+            .sign__ch {
+                text-align: right;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: var(--black700);
+                margin-bottom: 14px;
+
+                button {
+                    margin-left: 8px;
+                    background-color: #00000000;
+                    font-size: 1rem;
+                    color: var(--pointColor);
+                    cursor: pointer;
+                }
+            }
+
+            .pass__reSetting {
+                color: var(--white);
+                font-weight: 500;
+                font-size: 0.875rem;
+            }
+        }
+
+        .sign__up {
+            display: none;
+            margin: 0 74px;
+            padding: 226px 0 130px 0;
+            text-align: center;
+
+            h3 {
+                text-align: left;
+                width: 300px;
+                top: 96px;
+                left: 96px;
+                position: absolute;
+                font-size: 2.25rem;
+                font-weight: 800;
+                color: var(--white);
+                z-index: 1;
+
+                &::after {
+                    left: -22px;
+                    top: -35px;
+                    content: 'sign in';
+                    color: var(--black600);
+                    font-size: 4rem;
+                    font-weight: 800;
+                    position: absolute;
+                    width: 100%;
+                    z-index: -10;
+                }
+            }
+
+            .sign__comment {
+
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: var(--white);
+
+                em {
+                    color: var(--pointColor);
+                }
+            }
+
+            div {
+                form {
+                    padding-top: 58px;
+                    display: flex;
+                    flex-direction: column;
+
+                    div {
+                        position: relative;
+                        div{
+                            position: absolute;
+                            left: 20px;
+                            top: 0;
+                            z-index: 100;
+                            color: var(--black600);
+                        }
+                        input {
+                            min-height: 60px;
+                            width: 100%;
+                            padding: 20px;
+                            border: none;
+                            border-radius: 50px;
+                            font-size: 1rem;
+                            margin-bottom: 40px;
+
+                            &::placeholder {
+                                padding-left: 2px;
+                                font-size: 1.125rem;
+                                font-weight: 500;
+                                color: var(--black700);
+                            }
+                        }
+                    }
+
+                    .msg {
+                        display: none;
+                    }
+                }
+            }
+
+            .sign__ch {
+                text-align: right;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: var(--black700);
+
+                button {
+                    margin: 0;
+                    margin-left: 8px;
+                    background-color: #00000000;
+                    font-size: 1rem;
+                    color: var(--pointColor);
+                    cursor: pointer;
+                }
+            }
+
+            .signup__next {
+                margin-bottom: 0;
+            }
+
+            button {
+                width: 100%;
+                margin-top: 32px;
+                min-height: 60px;
+                border-radius: 50px;
+                background-color: var(--pointColor);
+                color: #fff;
+                cursor: pointer;
+                margin-bottom: 25px;
+                padding: 0;
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .inch__btn {
+                width: inherit;
+            }
+
+            .common_password_strength_check_box {
+                display: none;
+                position: absolute;
+            }
+        }
+
+        .pass__reSetting {
+            color: var(--white);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+    }
+
+    .sign__conditions {
+        position: absolute;
+        left: 50%;
+        bottom: 52px;
+        transform: translate(-50%);
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.875rem;
+        color: var(--black700);
+
+        a {
+            color: var(--black700);
+        }
+    }
+}

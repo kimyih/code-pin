@@ -1,0 +1,36 @@
+:root {
+    --fontF: 'Freesentation';
+
+    --pointColor: #78E3D0;
+
+    --white: #fff;
+    --white100: #f0f0f0;
+    --white200: #e1e1e1;
+    --white300: #dcdcdc;
+    --white400: #cbcbcb;
+    --white500: #b9b9b9;
+    --white600: #a3a3a3;
+    --white700: #939393;
+
+    --black: #000;
+    --black100: #111;
+    --black200: #222;
+    --black300: #333;
+    --black400: #444;
+    --black500: #555;
+    --black600: #666;
+    --black700: #777;
+
+    /* 기본 폰트 설정 */
+    font-family: var(--fontF);
+    font-size: 16px;
+
+    /* 아이폰 가로 모드에서 글씨 확대 금지 */
+    -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width:800px) {
+    :root {
+        font-size: 14px;
+    }
+}
