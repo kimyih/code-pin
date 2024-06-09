@@ -3,6 +3,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const codeInfo = document.querySelector(".code__info");
     const codeDetail = document.querySelector(".code__detail");
+
     const detailInfo = document.querySelector(".detail__info");
     const detailCode = document.querySelector(".detail__code");
 

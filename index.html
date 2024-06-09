@@ -25,6 +25,32 @@
             </div>
             <!-- //selector (code, folder, feed) -->
 
+            <!-- 로그인 전은 바로 위 login 주석 해제하면 됩니다. -->
+            <!-- <button class="my_profile" style="background-image: url('assets/img/default.jpg');"></button> -->
+
+            <!-- 마이 프로필 팝업 -->
+            <div class="profile-popup">
+                <div class="profile-popup-content">
+                    <p class="user-email">[유저 이메일]</p>
+                    <div class="profile-info">
+                        <img src="assets/img/default.jpg" alt="프로필 이미지">
+                    </div>
+                    <div class="user-name-container">
+                        <p id="you_name">닉네임</p>
+                        <button id="changeNameBtn" onclick="changeName()">이름 변경</button>
+                        <div class="name-edit-buttons" style="display: none;">
+                            <button onclick="saveName()">변경</button>
+                            <button onclick="cancelChange()">취소</button>
+                        </div>
+                    </div>
+                    <button id="logoutBtn" class="logout">
+                        <img src="assets/icon/exit.svg" alt="로그아웃 아이콘">
+                        로그아웃
+                    </button>
+                </div>
+            </div>
+            <div class="overlay"></div>
+
             <button class="login">Login</button>
             <div id="sign__wrap">
                 <div class="sign__inner">
@@ -204,8 +230,8 @@
                                     <div class="site__name">네이버</div>
                                     <div class="site__memo">네이버 설명</div>
                                 </div>
-
                             </div>
+
                             <div class="user__edit">
                                 <input type="text" class="user_site_title" placeholder="사용자 타이틀" id="edit__title" value>
                                 <textarea name="user_site_memo" id="user_site_memo" placeholder="사용자 지정 메모"></textarea>
@@ -219,10 +245,78 @@
                         </div>
                     </div>
                     <!-- //코드 편집창 -->
-                    <div class="list__list"></div>
-                    <!-- //코드 분류창 -->
-                    <div class="add__list"></div>
-                    <!-- 코드 추가창 -->
+
+                    <div class="list__list">
+                        <div class="list__in">
+                            <div class="site__info">
+                                <div class="site__img">
+                                    <img src="/assets/img/naver.png" alt="">
+                                </div>
+                                <div class="site_in">
+                                    <div class="site__name">네이버</div>
+                                    <div class="site__memo">네이버 설명</div>
+                                </div>
+                            </div>
+
+                            <div class="folder__list">
+                                <div class="folder__in">
+                                    <div class="folder__info">
+                                        <div class="folder__img">
+                                            <img src="/assets/img/gray.jpg" alt="">
+                                        </div>
+                                        <div class="folder__title">
+                                            <p class="folder__text">Javascript</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="list__save">
+                                    <p>저장하기</p>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- // 코드 분류창 -->
+
+                    <div class="add__list">
+                        <div class="add__in">
+                            <div class="add__code">
+                                <input type="text" class="add__title" id="add__title" placeholder="코드에 대한 제목을 적어주세요!">
+                                <textarea name="add__comment" id="add__comment"
+                                    placeholder="코드에 대한 설명을 적어주세요!"></textarea>
+                                <button class="add_code_btn">
+                                    <p>코드추가</p>
+                                </button>
+                            </div>
+
+                            <div class="add_list_right">
+                                <div class="add_list_btn">
+                                    <button class="add_save_btn">
+                                        저장하기
+                                    </button>
+                                    <button class="add_save_delete">
+                                        삭제하기
+                                    </button>
+                                </div>
+                                <!-- //add_list_btn -->
+
+                                <div class="add_list_scroll">
+                                    <div class="add_code_list">
+                                        <div class="add__title">
+                                            <p>제목</p>
+                                        </div>
+                                        <div class="add__memo">
+                                            <p>설명</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- //add_list_scroll -->
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- //코드 추가창 -->
                 </div>
             </div>
         </div>
@@ -243,8 +337,10 @@
         </div>
     </footer>
     <!-- //footer -->
+
     <script src="/assets/script/jquery-3.6.0.min.js"></script>
     <script src="/assets/script/sign.js"></script>
+    <script src="/assets/script/out_container.js"></script>
 </body>
 
 </html>

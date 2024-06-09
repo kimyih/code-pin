@@ -137,9 +137,9 @@
     height: 100vh;
     background-color: rgba(18, 19, 20, .5);
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
-    z-index: 999;
+    z-index: 2000;
     align-content: center;
 
     .modal__container {
@@ -148,7 +148,7 @@
 
         .edit__container {
             width: 70%;
-            max-width: 1200px;
+            max-width: 980px;
             border-radius: 30px;
             display: flex;
             flex-flow: column;
@@ -176,10 +176,15 @@
                         padding: 20px;
                         margin-left: 20px;
                         cursor: pointer;
+
+                        &.active>p {
+                            color: var(--pointColor);
+                            text-decoration: underline;
+                        }
+
+
                     }
-
                 }
-
             }
 
             /* //edit__top */
@@ -187,91 +192,336 @@
             .edit__contents {
                 width: 100%;
 
-                .edit__in {
-                    width: 100%;
-                    margin-top: 30px;
-                    display: flex;
+                .edit__list {
+                    /* display: none; */
 
-                    .site__info {
-                        width: 50%;
-                        padding: 0.8rem 1.6rem;
+                    .edit__in {
+                        width: 100%;
+                        margin-top: 30px;
+                        display: flex;
 
-                        .site__img {
-                            width: 100%;
-                            margin-bottom: 20px;
+                        .site__info {
+                            width: 50%;
+                            padding: 0.8rem 1.6rem;
 
-                            img {
-                                background-size: cover;
-                                background-repeat: no-repeat;
-                                background-position: center;
+                            .site__img {
                                 width: 100%;
-                                height: auto;
-                                border-radius: 30px;
+                                margin-bottom: 20px;
+
+                                img {
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: 30px;
+                                }
+                            }
+
+                            .site_in {
+                                width: 100%;
+
+                                .site__name {
+                                    font-size: 24px;
+                                    font-weight: 600;
+                                }
+
+                                .site__memo {
+                                    font-size: 20px;
+                                }
                             }
                         }
 
-                        .site_in {
-                            width: 100%;
+                        .user__edit {
+                            width: 50%;
+                            padding: 0.8rem 1.6rem;
 
-                            .site__name {
-                                font-size: 24px;
-                                font-weight: 600;
-                            }
-
-                            .site__memo {
+                            .user_site_title {
+                                width: 100%;
+                                padding: 10px 20px 10px 20px;
                                 font-size: 20px;
+                                box-sizing: border-box;
+                                border-radius: 30px;
+                                border: 1px solid var(--white400);
+                                margin-bottom: 1rem;
                             }
-                        }
 
+                            #user_site_memo {
+                                width: 100%;
+                                height: 20rem;
+                                text-align: left;
+                                resize: none;
+                                overflow-y: auto;
+                                border-radius: 30px;
+                                border: 1px solid var(--white400);
+                                padding: 20px;
+                                box-sizing: border-box;
+                                font-size: 16px;
+                                margin-bottom: 20px;
+                            }
 
-                    }
+                            .user_site_delete,
+                            .user_site_save {
+                                width: 100%;
+                                background-color: var(--white400);
+                                border-radius: 30px;
+                                font-size: 24px;
+                                padding: 5px;
+                                margin-bottom: 10px;
 
-                    .user__edit {
-                        width: 50%;
-                        padding: 0.8rem 1.6rem;
-
-                        .user_site_title {
-                            width: 100%;
-                            padding: 10px 20px 10px 20px;
-                            font-size: 20px;
-                            box-sizing: border-box;
-                            border-radius: 30px;
-                            border: 1px solid var(--white400);
-                            margin-bottom: 1rem;
-                        }
-
-                        #user_site_memo {
-                            width: 100%;
-                            height: 20rem;
-                            text-align: left;
-                            resize: none;
-                            overflow-y: auto;
-                            border-radius: 30px;
-                            border: 1px solid var(--white400);
-                            padding: 20px;
-                            box-sizing: border-box;
-                            font-size: 16px;
-                            margin-bottom: 20px;
-                        }
-
-                        .user_site_delete,
-                        .user_site_save {
-                            width: 100%;
-                            background-color: var(--white400);
-                            border-radius: 30px;
-                            font-size: 24px;
-                            padding: 5px;
-                            margin-bottom: 10px;
-
+                            }
                         }
                     }
                 }
 
+                /* //edit__list 코드 편집창  */
+
+                .list__list {
+                    /* display: none; */
+
+                    .list__in {
+                        width: 100%;
+                        display: flex;
+                        margin-top: 30px;
+
+                        .site__info {
+                            width: 50%;
+                            padding: 0.8rem 1.6rem;
+
+                            .site__img {
+                                width: 100%;
+                                margin-bottom: 20px;
+
+                                img {
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                    background-position: center;
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: 30px;
+                                }
+                            }
+
+                            .site_in {
+                                width: 100%;
+
+                                .site__name {
+                                    font-size: 24px;
+                                    font-weight: 600;
+                                }
+
+                                .site__memo {
+                                    font-size: 20px;
+                                }
+                            }
+                        }
+
+                        .folder__list {
+                            width: 50%;
+                            padding: 0.8rem 1.6rem;
+
+                            .folder__in {
+                                display: flex;
+                                border-radius: 30px;
+                                height: 24rem;
+                                overflow: scroll;
+                                margin-bottom: 3rem;
+                                flex-flow: column;
+
+                                .folder__info {
+                                    padding: .5rem 1.6rem;
+                                    border-radius: 2rem;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    align-items: center;
+                                    gap: 1.2rem;
+                                    margin: 2px;
+                                    cursor: pointer;
+
+                                    .folder__img {
+
+                                        img {
+                                            width: 3rem;
+                                            height: 3rem;
+                                            border-radius: 1.8rem;
+                                            object-fit: cover;
+                                            border: .1rem solid #e6e6e6;
+                                        }
+                                    }
+
+                                    .folder__title {
+                                        font-size: 20px;
+                                    }
+
+                                    .click {
+                                        background-color: var(--white500);
+                                    }
+                                }
+                            }
+
+                            .list__save {
+                                width: 100%;
+                                background-color: var(--white400);
+                                border-radius: 30px;
+                                font-size: 20px;
+                                padding: 5px;
+                                margin-bottom: 10px;
+                                cursor: pointer;
+
+                            }
+
+                            .list__save:hover {
+                                background-color: var(--pointColor);
+                                color: var(--white);
+                            }
+                        }
+                    }
+                }
+
+                /* //list__list 코드 분류창 */
+
+                .add__list {
+                    /* display: none; */
+
+                    .add__in {
+                        width: 100%;
+                        margin-top: 30px;
+                        display: flex;
+
+                        .add__code {
+                            width: 50%;
+                            padding: 0.8rem 1.6rem;
+
+
+                            .add__title {
+                                width: 100%;
+                                padding: 10px 20px 10px 20px;
+                                font-size: 20px;
+                                box-sizing: border-box;
+                                border-radius: 10px;
+                                border: 1px solid var(--white400);
+                                margin-bottom: 1rem;
+
+                            }
+
+                            #add__comment {
+                                width: 100%;
+                                height: 20rem;
+                                text-align: left;
+                                resize: none;
+                                overflow-y: auto;
+                                border-radius: 10px;
+                                border: 1px solid var(--white400);
+                                padding: 20px;
+                                box-sizing: border-box;
+                                font-size: 16px;
+                                margin-bottom: 20px;
+                            }
+
+                            .add_code_btn {
+                                width: 100%;
+                                background-color: var(--white400);
+                                border-radius: 30px;
+                                font-size: 24px;
+                                padding: 5px;
+                                margin-bottom: 10px;
+                                cursor: pointer;
+                            }
+                        }
+
+                        .add_list_right {
+                            width: 50%;
+                            padding: 0.8rem 1.6rem;
+
+                            .add_list_btn {
+                                display: flex;
+                                justify-content: right;
+                                margin-bottom: 30px;
+
+                                .add_save_btn,
+                                .add_save_delete {
+                                    width: 7rem;
+                                    border-radius: 30px;
+                                    height: 2rem;
+                                    font-size: 20px;
+                                    background-color: var(--white500);
+                                    margin-left: 10px;
+                                    cursor: pointer;
+
+                                    p {
+                                        padding: 10px;
+
+                                    }
+                                }
+
+                                .add_save_btn:hover,
+                                .add_save_delete:hover {
+                                    background-color: var(--pointColor);
+                                    color: var(--white);
+                                }
+
+                                .add_save_btn {}
+
+                                .add_save_delete {
+                                    color: var(--white);
+                                }
+                            }
+
+                            .add_list_scroll {
+                                width: 100%;
+                                overflow-y: scroll;
+                                height: 26rem;
+
+                                .add_code_list {
+                                    width: 100%;
+                                    overflow-y: scroll;
+                                    height: 8rem;
+                                    border: 1px solid var(--white500);
+                                    padding: 5px;
+                                    border-radius: 10px 0px 0px 10px;
+                                    margin-top: 10px;
+
+                                    .add__title {
+                                        font-size: 20px;
+                                        font-weight: 500;
+                                        color: var(--white500);
+                                        border-bottom: .1rem solid var(--white700);
+
+                                        p {
+                                            padding: 0.1rem;
+                                        }
+                                    }
+
+                                    .add__memo {
+                                        font-size: 16px;
+                                        color: var(--white500);
+
+                                        p {
+                                            padding: 0.1rem;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+
+                    }
+
+                }
             }
-
-
-
 
         }
     }
 }
+
+.hidden {
+    display: none !important;
+}
+
+.click {
+    background-color: var(--white400);
+    color: var(--white);
+}
+
+/* //modal__outcontainer */
