@@ -57,11 +57,14 @@
         padding: 5%;
         margin: 0 auto;
 
+
+
         .grid__item {
             padding: 10px;
             font-size: 1.5rem;
             font-weight: 500;
             color: var(--black);
+            cursor: pointer;
 
             .grid__img {
                 width: 100%;
@@ -75,59 +78,102 @@
                 position: relative;
             }
 
-            .grid__leri {
-                border-radius: 50px;
-                width: 100%;
+            .grid__container {
                 position: relative;
+                /* top: 80%; */
+                width: 100%;
+                height: auto;
                 display: flex;
-                justify-content: space-between;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-end;
+                gap: 12px;
+                z-index: 1;
+                /* visibility: hidden;
+                opacity: 0; */
+                transition: visibility 0s, opacity 0.3s linear;
 
-                .left {
-                    width: 49%;
-                    padding-top: 100%;
-                    /* 부모 요소의 높이에 따라 100% 설정 */
-                    background-color: var(--white500);
-                    border-radius: 50px 0 0 50px;
-                }
+                .edit__btn {
+                    padding-right: 5%;
+                    position: absolute;
+                    top: -60px;
 
-                .right {
-                    width: 49%;
-                    display: flex;
-                    justify-content: space-between;
-                    flex-direction: column;
-                }
+                    .code_edit {
+                        position: static;
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 50%;
+                        background: hsla(0, 0%, 100%, 0.8);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
 
-                .right__top,
-                .right__bot {
-                    padding-top: 100%;
-                    width: 100%;
-                    background-color: var(--white500);
-                }
-
-                .right__top {
-                    border-radius: 0 50px 0 0;
-                }
-
-                .right__bot {
-                    border-radius: 0 0 50px 0;
+                        img {
+                            width: 25px;
+                            height: 25px;
+                            color: transparent;
+                        }
+                    }
                 }
             }
 
-            .grid__info {
-                margin-top: 14px;
 
-                .grid__title {
-                    font-size: 1.25rem;
-                    font-weight: bold;
-                }
+        }
 
-                .grid__description {
-                    font-size: 1rem;
-                    color: var(--black600);
-                }
+        .grid__leri {
+            border-radius: 50px;
+            width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+
+            .left {
+                width: 49%;
+                padding-top: 100%;
+                /* 부모 요소의 높이에 따라 100% 설정 */
+                background-color: var(--white500);
+                border-radius: 50px 0 0 50px;
+            }
+
+            .right {
+                width: 49%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+            }
+
+            .right__top,
+            .right__bot {
+                padding-top: 100%;
+                width: 100%;
+                background-color: var(--white500);
+            }
+
+            .right__top {
+                border-radius: 0 50px 0 0;
+            }
+
+            .right__bot {
+                border-radius: 0 0 50px 0;
+            }
+        }
+
+        .grid__info {
+            margin-top: 14px;
+
+            .grid__title {
+                font-size: 1.25rem;
+                font-weight: bold;
+            }
+
+            .grid__description {
+                font-size: 1rem;
+                color: var(--black600);
             }
         }
     }
+
 }
 
 /* grid 안에 있는 모달 scss */
@@ -141,7 +187,7 @@
     left: 0;
     z-index: 2000;
     align-content: center;
-    /* display: none; */
+    display: none;
 
     .modal__container {
         display: flex;

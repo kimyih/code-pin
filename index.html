@@ -157,6 +157,8 @@
             </div>
         </div>
     </header>
+
+
     <main id="main">
         <h2 class="main__title">Cod<em>e</em> pin</h2>
         <span>Which site's <em>code</em> should I save?</span>
@@ -164,6 +166,8 @@
             <input type="text" name="link__input" placeholder="Login and save the code">
         </div>
     </main>
+
+
     <section id="grid">
         <div class="grid__control">
             <div class="section__num"><em>6</em> CODE</div>
@@ -172,12 +176,40 @@
         <article class="grid__inner">
             <div class="grid__item">
                 <div class="grid__img"></div>
+                <!-- //추가된 부분 -->
+                <div class="grid__container">
+                    <div class="edit__btn">
+                        <button class="code_edit">
+                            <img src="/assets/img/icon_dots.webp" alt="">
+                        </button>
+                    </div>
+                    <!-- //edit__btn 이미지 hover시 아이콘 -->
+
+                    <div class="edit_modal_container">
+                        <div class="edit__menu">
+                            <div class="edit__code">
+                                <img src="/assets/img/icon_category_grey.webp" alt="">
+                                <p class="edit__text">코드편집</p>
+                            </div>
+                            <div class="delete__code">
+                                <img src="/assets/img/icon_delete_grey.webp" alt="">
+                                <p class="delete__text">코드삭제</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- //아이콘  -->
+                </div>
+
+
+
                 <div class="grid__info">
                     <div class="grid__title">코드 제목입니다</div>
                     <div class="grid__description">코드 설명입니다</div>
                 </div>
-                <div class="grid__eddit"></div>
+                <div class="grid__eddit">
+                </div>
             </div>
+
             <div class="grid__item">
                 <div class="grid__img"></div>
                 <div class="grid__info">
