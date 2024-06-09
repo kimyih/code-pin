@@ -16,14 +16,12 @@
                     <h1>COD<em>E</em>PIN</h1>
                 </a>
             </div>
-            <!-- //logo -->
-
             <div id="selector">
                 <button id="code__selector" class="active">HOME</button>
                 <button id="folder__selector">FOLDER</button>
                 <button id="code__selector">FEED</button>
             </div>
-            <!-- //selector (code, folder, feed) -->
+            <button class="login">Login</button>
 
             <!-- 로그인 전은 바로 위 login 주석 해제하면 됩니다. -->
             <!-- <button class="my_profile" style="background-image: url('assets/img/default.jpg');"></button> -->
@@ -51,89 +49,114 @@
             </div>
             <div class="overlay"></div>
 
-            <button class="login">Login</button>
             <div id="sign__wrap">
                 <div class="sign__inner">
                     <button class="sign__close"></button>
-                    <div class="sign__in">
-                        <h3>Sign in</h3>
-                        <span class="sign__comment"><em>코드핀</em>에 로그인 하고 다양한 코드를 저장해보세요!</span>
-                        <form id="signin__Form" action="signin.php" name="signin" method="post">
-                            <div>
-                                <input type="text" name="signin__Email" id="signin__Email" autocomplete="off" required>
-                                <div class="signin__Emaill_placeholder">이메일</div>
-                                <p class="msg" id="signin__Email__comment"></p>
-                            </div>
-                            <div>
-                                <input type="password" name="signin__Pass" id="signin__Pass" autocomplete="off"
-                                    required>
-                                <div class="signin__Pass_placeholder">비밀번호</div>
-                                <p class="msg" id="signin__Pass__comment"></p>
-                            </div>
-                            <button type="submit" id="signin__btn">로그인</button>
-                        </form>
-                        <div class="upch__wr sign__ch">계정이 없으신가요?<button class="upch__btn">회원가입</button></div>
-                        <a class="pass__reSetting" href="signpassword.php">비밀번호 찾기</a>
-                    </div>
-                    <!-- sign in -->
-                    <div class="sign__up">
-                        <h3>Sign up</h3>
-                        <span class="sign__comment"><em>코드핀</em>에 로그인 하고 다양한 코드를 저장해보세요!</span>
-                        <div class="signup__next 1">
-                            <form id="signup__Form" action="signup.php" name="signup" method="post"
-                                onsubmit="return signupChecks()">
-                                <div>
-                                    <input type="email" name="signup__Email" id="signup__Email" autocomplete="off"
-                                        required>
-                                    <div class="signup__Emaill_placeholder">이메일</div>
-                                    <p class="msg" id="signup__Email__comment"></p>
+                    <div class="form__container">
+                        <div class="sign__in">
+                            <h3 data-text="sign in">Sign in</h3>
+                            <span class="sign__comment"><em>코드핀</em>에 로그인 하고 다양한 코드를 저장해보세요!</span>
+                            <form id="signin__Form" action="signin.php" name="signin" method="post">
+                                <div class="input__wrapper">
+                                    <input type="text" name="signin__Email" id="signin__Email" class="input__field"
+                                        autocomplete="off" required>
+                                    <div class="input__placeholder">이메일</div>
+                                    <p class="msg" id="signin__Email__comment"></p>
                                 </div>
-                                <div>
-                                    <input type="password" name="signup__Pass" id="signup__Pass" autocomplete="off"
-                                        required>
-                                    <div class="signup__Pass_placeholder">비밀번호</div>
-                                    <p class="msg" id="signup__Pass__comment"></p>
+                                <div class="input__wrapper">
+                                    <input type="password" name="signin__Pass" id="signin__Pass" class="input__field"
+                                        autocomplete="off" required>
+                                    <div class="input__placeholder">비밀번호</div>
+                                    <p class="msg" id="signin__Pass__comment"></p>
                                 </div>
-                                <div>
-                                    <label for="signup__PassC" class="hidden">password checking</label>
-                                    <input type="password" name="signup__PassC" id="signup__PassC" autocomplete="off"
-                                        required>
-                                    <div class="signup__PassC_placeholder">비밀번호 확인</div>
-                                    <p class="msg" id="signup__PassC__comment"></p>
-                                </div>
+                                <button type="submit" class="signin__btn">로그인</button>
                             </form>
+                            <div class="upch__wr sign__ch">계정이 없으신가요?<button class="upch__btn">회원가입</button></div>
+                            <a class="pass__reSetting" href="signpassword.php">비밀번호 찾기</a>
                         </div>
-                        <button class="signup__next">다음</button>
-                        <button type="submit" id="signup__btn" class="hidden">회원가입</button>
-                        <div class="inch__wr sign__ch">계정이 있으신가요?<button class="inch__btn">로그인</button></div>
-                        <div class="common_password_strength_check_box">
-                            <div class="common_close_password_strength_check_box">
+
+                        <div class="sign__up">
+                            <h3 data-text="sign up">Sign up</h3>
+                            <div class="signup__next 1">
+                                <form id="signup__Form" action="signup.php" name="signup" method="post"
+                                    onsubmit="return signupChecks()">
+                                    <div class="input__wrapper">
+                                        <input type="email" name="signup__Email" id="signup__Email" class="input__field"
+                                            autocomplete="off" required>
+                                        <div class="input__placeholder">이메일</div>
+                                        <p class="msg" id="signup__Email__comment"></p>
+                                    </div>
+                                    <div class="input__wrapper">
+                                        <input type="password" name="signup__Pass" id="signup__Pass"
+                                            class="input__field" autocomplete="off" required>
+                                        <div class="input__placeholder">비밀번호</div>
+                                        <p class="msg" id="signup__Pass__comment"></p>
+                                    </div>
+                                    <div class="input__wrapper">
+                                        <label for="signup__PassC" class="hidden">password checking</label>
+                                        <input type="password" name="signup__PassC" id="signup__PassC"
+                                            class="input__field" autocomplete="off" required>
+                                        <div class="input__placeholder">비밀번호 확인</div>
+                                        <p class="msg" id="signup__PassC__comment"></p>
+                                    </div>
+                                    <button type="submit" class="signup__next">다음</button>
+                                </form>
                             </div>
-                            <div class="common_password_condition_text_box common_password_condition_first"><span
-                                    class="common_password_condition_icon"></span>8자 이상 입력</div>
-                            <div class="common_password_condition_text_box common_password_condition_second"><span
-                                    class="common_password_condition_icon"></span>특수문자 1개 이상의 조합</div>
-                            <div class="common_password_condition_text_box common_password_condition_third"><span
-                                    class="common_password_condition_icon"></span>최소 1개 이상의 숫자</div>
-                            <div class="common_password_strength_gage_wrapper">
-                                <p>비밀번호 보안성</p>
-                                <div class="common_password_strength_gage">
-                                    <div></div>
+                            <button type="submit" id="signup__btn" class="hidden">회원가입</button>
+                            <div class="inch__wr sign__ch">계정이 있으신가요?<button class="inch__btn">로그인</button></div>
+                        </div>
+                        <div class="sign__code">
+                            <h3 data-text="sign up">Sign up</h3>
+                            <span class="sign__comment">이메일<em>인증코드</em>를 입력해주세요!</span>
+                            <form id="signup__CodeForm" action="signup.php" name="signup_code" method="post">
+                                <div class="input__wrapper">
+                                    <input type="text" name="signup__Code" id="signup__Code" class="input__field"
+                                        autocomplete="off" required>
+                                    <div class="input__placeholder">인증코드를 입력해주세요.</div>
+                                    <p class="msg" id="signup__Code__comment"></p>
                                 </div>
-                            </div>
+                                <button type="submit" class="continue__btn">계속</button>
+                            </form>
+                            <div class="inch__wr sign__ch">계정이 있으신가요?<button class="inch__btn">로그인</button></div>
+                        </div>
+                        <div class="sign__nickname">
+                            <h3 data-text="sign up">Sign up</h3>
+                            <span class="sign__comment">사용하실 <em>닉네임</em>혹은 <em>이름</em>을 적어주세요!</span>
+                            <form id="signup__NicknameForm" action="signup.php" name="signup_nickname" method="post">
+                                <div class="input__wrapper">
+                                    <input type="text" name="signup__Nickname" id="signup__Nickname"
+                                        class="input__field" autocomplete="off" required>
+                                    <div class="input__placeholder">닉네임 및 이름을 적어주세요.</div>
+                                    <p class="msg" id="signup__Nickname__comment"></p>
+                                </div>
+                                <button type="submit" class="continue__btn">가입 완료</button>
+                            </form>
+                            <div class="inch__wr sign__ch">계정이 있으신가요?<button class="inch__btn">로그인</button></div>
                         </div>
                     </div>
-                    <!-- sign up -->
-                    <span class="sign__conditions"><a href="#">이용약관</a> 및 <a href="#">개인정보</a> 취급방침에 동의하고
-                        시작합니다.</span>
+                    <span class="sign__conditions"><a href="#">이용약관</a> 및 <a href="#">개인정보</a> 취급방침에 동의하고 시작합니다.</span>
+                </div>
+                <div class="common_password_strength_check_box">
+                    <div class="common_close_password_strength_check_box"></div>
+                    <div class="common_password_condition_text_box common_password_condition_first">
+                        <span class="common_password_condition_icon"></span>8자 이상 입력
+                    </div>
+                    <div class="common_password_condition_text_box common_password_condition_second">
+                        <span class="common_password_condition_icon"></span>특수문자 1개 이상의 조합
+                    </div>
+                    <div class="common_password_condition_text_box common_password_condition_third">
+                        <span class="common_password_condition_icon"></span>최소 1개 이상의 숫자
+                    </div>
+                    <div class="common_password_strength_gage_wrapper">
+                        <p>비밀번호 보안성</p>
+                        <div class="common_password_strength_gage">
+                            <div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- //login -->
         </div>
-        <!-- //container -->
     </header>
-    <!-- //header -->
-
     <main id="main">
         <h2 class="main__title">Cod<em>e</em> pin</h2>
         <span>Which site's <em>code</em> should I save?</span>
@@ -141,8 +164,6 @@
             <input type="text" name="link__input" placeholder="Login and save the code">
         </div>
     </main>
-    <!-- //main -->
-
     <section id="grid">
         <div class="grid__control">
             <div class="section__num"><em>6</em> CODE</div>
@@ -199,8 +220,8 @@
             </div>
         </article>
     </section>
-    <!-- //section (code, folder, feed) -->
 
+    <!-- //modal__outcontainer  -->
     <div id="modal__outcontainer">
         <div class="modal__container mt100">
             <div class="edit__container">
@@ -336,11 +357,10 @@
             COPYRIGHT © Codepin. All Rights Reserved.
         </div>
     </footer>
-    <!-- //footer -->
-
     <script src="/assets/script/jquery-3.6.0.min.js"></script>
     <script src="/assets/script/sign.js"></script>
-    <script src="/assets/script/out_container.js"></script>
+    <script src="/assets/script/header.js"></script>
+    <script src="assets/script/out_container.js"></script>
 </body>
 
 </html>

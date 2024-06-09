@@ -39,3 +39,26 @@ document.addEventListener("DOMContentLoaded", function () {
         showContent("codeadd", "addlist");
     });
 });
+
+
+// 아이템 클릭시 modal 나오는 자바스크립트
+document.addEventListener('DOMContentLoaded', function () {
+    const gridItems = document.querySelectorAll('.grid__item');
+    const modalOutContainer = document.getElementById('modal__outcontainer');
+    const modalContainer = document.querySelector('.modal__container');
+
+    // grid__item 클릭 시 모달 표시
+    gridItems.forEach(item => {
+        item.addEventListener('click', function () {
+            modalOutContainer.style.display = 'block';
+        });
+    });
+
+    // 모달 바깥 클릭 시 모달 닫기
+    window.addEventListener('click', function (event) {
+        if (event.target === modalOutContainer && !modalContainer.contains(event.target)) {
+            modalOutContainer.style.display = 'none';
+        }
+    });
+});
+

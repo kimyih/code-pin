@@ -11,12 +11,16 @@
     .sign__inner {
         margin: 0 auto;
         width: 600px;
+        height: 90%;
+        max-height: 700px;
         background-color: var(--black);
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        border-radius: 50px;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: margin-left 0.3s;
 
         .sign__close {
             background: none;
@@ -25,55 +29,69 @@
             font-size: 1.5rem;
             cursor: pointer;
             position: absolute;
-            right: 50px;
-            top: 36px;
+            right: 30px;
+            top: 20px;
 
             &::after {
                 content: '';
                 display: inline-block;
-                width: 36px;
-                height: 36px;
+                width: 24px;
+                height: 24px;
                 background: url('../icon/x_icon.svg') no-repeat center;
                 background-size: contain;
                 filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
             }
         }
 
+        .form__container {
+            display: flex;
+            width: 2400px;
+            height: 100%;
+            transition: margin-left 0.3s;
+            overflow: hidden;
+        }
 
-        .sign__in {
-            margin: 0 74px;
-            padding: 226px 0 130px 0;
+        .sign__in,
+        .sign__up,
+        .sign__code,
+        .sign__nickname {
+            width: 600px;
+            margin: 0;
+            padding: 50px;
             text-align: center;
+            flex-shrink: 0;
 
             h3 {
                 text-align: left;
-                width: 300px;
-                top: 96px;
-                left: 96px;
-                position: absolute;
-                font-size: 2.25rem;
+                width: 100%;
+                position: relative;
+                font-size: 2rem;
                 font-weight: 800;
                 color: var(--white);
-                z-index: 1;
+                top: 30px;
+                left: 20px;
 
                 &::after {
-                    left: -22px;
-                    top: -35px;
-                    content: 'sign in';
+                    content: attr(data-text);
                     color: var(--black600);
-                    font-size: 4rem;
+                    font-size: 3rem;
                     font-weight: 800;
                     position: absolute;
                     width: 100%;
-                    z-index: -10;
+                    left: 0;
+                    top: -40px;
+                    z-index: -1;
+                    padding-left: 10px;
                 }
             }
 
             .sign__comment {
-
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 font-weight: 500;
                 color: var(--white);
+                margin-bottom: 30px;
+                position: relative;
+                top: 48px;
 
                 em {
                     color: var(--pointColor);
@@ -81,27 +99,29 @@
             }
 
             form {
-                padding-top: 58px;
+                padding-top: 80px;
                 display: flex;
                 flex-direction: column;
 
-                div {
+                .input__wrapper {
                     position: relative;
-                    div{
+                    margin-bottom: 30px;
+
+                    .input__placeholder {
                         position: absolute;
                         left: 20px;
-                        top: 0;
+                        top: 20px;
                         z-index: 100;
                         color: var(--black600);
                     }
+
                     input {
-                        min-height: 60px;
+                        min-height: 50px;
                         width: 100%;
                         padding: 20px;
                         border: none;
-                        border-radius: 50px;
+                        border-radius: 30px;
                         font-size: 1rem;
-                        margin-bottom: 40px;
 
                         &::placeholder {
                             padding-left: 2px;
@@ -110,19 +130,39 @@
                             color: var(--black700);
                         }
                     }
+
+                    p.msg {
+                        display: block;
+                        margin-top: 10px;
+                        font-size: 0.875rem;
+                        color: red;
+                        text-align: left;
+                        margin-left: 25px;
+                    }
                 }
 
-                button {
+                button.signup__next,
+                button.signin__btn,
+                button.signup__btn,
+                button.continue__btn,
+                .sign__up .signup__next {
                     margin-top: 32px;
-                    min-height: 60px;
-                    border-radius: 50px;
-                    background-color: var(--pointColor);
-                    color: #fff;
+                    min-height: 50px;
+                    border-radius: 25px;
+                    background-color: transparent;
+                    color: var(--white);
                     cursor: pointer;
-                    margin-bottom: 25px;
+                    margin-bottom: 20px;
                     padding: 0;
-                    font-size: 1.5rem;
+                    font-size: 1.25rem;
                     font-weight: 700;
+                    border: 1px solid var(--pointColor);
+                    transition: background-color 0.3s, color 0.3s;
+
+                    &:hover {
+                        background-color: var(--pointColor);
+                        color: #fff;
+                    }
                 }
 
                 .msg {
@@ -139,7 +179,7 @@
 
                 button {
                     margin-left: 8px;
-                    background-color: #00000000;
+                    background-color: transparent;
                     font-size: 1rem;
                     color: var(--pointColor);
                     cursor: pointer;
@@ -153,149 +193,389 @@
             }
         }
 
-        .sign__up {
-            display: none;
-            margin: 0 74px;
-            padding: 226px 0 130px 0;
+        .sign__conditions {
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            transform: translate(-50%);
             text-align: center;
-
-            h3 {
-                text-align: left;
-                width: 300px;
-                top: 96px;
-                left: 96px;
-                position: absolute;
-                font-size: 2.25rem;
-                font-weight: 800;
-                color: var(--white);
-                z-index: 1;
-
-                &::after {
-                    left: -22px;
-                    top: -35px;
-                    content: 'sign in';
-                    color: var(--black600);
-                    font-size: 4rem;
-                    font-weight: 800;
-                    position: absolute;
-                    width: 100%;
-                    z-index: -10;
-                }
-            }
-
-            .sign__comment {
-
-                font-size: 1.5rem;
-                font-weight: 500;
-                color: var(--white);
-
-                em {
-                    color: var(--pointColor);
-                }
-            }
-
-            div {
-                form {
-                    padding-top: 58px;
-                    display: flex;
-                    flex-direction: column;
-
-                    div {
-                        position: relative;
-                        div{
-                            position: absolute;
-                            left: 20px;
-                            top: 0;
-                            z-index: 100;
-                            color: var(--black600);
-                        }
-                        input {
-                            min-height: 60px;
-                            width: 100%;
-                            padding: 20px;
-                            border: none;
-                            border-radius: 50px;
-                            font-size: 1rem;
-                            margin-bottom: 40px;
-
-                            &::placeholder {
-                                padding-left: 2px;
-                                font-size: 1.125rem;
-                                font-weight: 500;
-                                color: var(--black700);
-                            }
-                        }
-                    }
-
-                    .msg {
-                        display: none;
-                    }
-                }
-            }
-
-            .sign__ch {
-                text-align: right;
-                font-size: 0.875rem;
-                font-weight: 500;
-                color: var(--black700);
-
-                button {
-                    margin: 0;
-                    margin-left: 8px;
-                    background-color: #00000000;
-                    font-size: 1rem;
-                    color: var(--pointColor);
-                    cursor: pointer;
-                }
-            }
-
-            .signup__next {
-                margin-bottom: 0;
-            }
-
-            button {
-                width: 100%;
-                margin-top: 32px;
-                min-height: 60px;
-                border-radius: 50px;
-                background-color: var(--pointColor);
-                color: #fff;
-                cursor: pointer;
-                margin-bottom: 25px;
-                padding: 0;
-                font-size: 1.5rem;
-                font-weight: 700;
-            }
-
-            .inch__btn {
-                width: inherit;
-            }
-
-            .common_password_strength_check_box {
-                display: none;
-                position: absolute;
-            }
-        }
-
-        .pass__reSetting {
-            color: var(--white);
             font-weight: 500;
-            font-size: 0.875rem;
+            font-size: 0.75rem;
+            color: var(--black700);
+
+            a {
+                color: var(--black700);
+            }
         }
     }
 
-    .sign__conditions {
+    .common_password_strength_check_box {
+        display: none;
         position: absolute;
-        left: 50%;
-        bottom: 52px;
-        transform: translate(-50%);
-        text-align: center;
-        font-weight: 500;
-        font-size: 0.875rem;
-        color: var(--black700);
+        left: calc(50% + -410px);
+        /* Adjust this value as needed */
+        top: 55%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 15px;
 
-        a {
-            color: var(--black700);
+        .common_password_condition_text_box {
+            margin-bottom: 10px;
+
+            .common_password_condition_icon {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #ccc;
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            &.condition-met {
+                .common_password_condition_icon {
+                    background-color: green;
+                }
+            }
         }
+
+        .common_password_strength_gage_wrapper {
+            margin-top: 20px;
+
+            p {
+                margin-bottom: 5px;
+            }
+
+            .common_password_strength_gage {
+                width: 100%;
+                background-color: #eee;
+                border-radius: 25px;
+
+                div {
+                    height: 10px;
+                    background-color: green;
+                    width: 0%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .sign__inner {
+        max-width: 90%;
+        height: 90%;
+    }
+
+    .sign__up,
+    .sign__in,
+    .sign__code,
+    .sign__nickname {
+        margin: 0 50px;
+        padding: 50px 0;
+    }
+
+    .sign__up h3,
+    .sign__in h3,
+    .sign__code h3,
+    .sign__nickname h3 {
+        top: 50px;
+        left: 20px;
+    }
+
+    .sign__up .sign__comment,
+    .sign__in .sign__comment,
+    .sign__code .sign__comment,
+    .sign__nickname .sign__comment {
+        font-size: 0.875rem;
+    }
+
+    .sign__up form .input__wrapper,
+    .sign__in form .input__wrapper,
+    .sign__code form .input__wrapper,
+    .sign__nickname form .input__wrapper {
+        margin-bottom: 15px;
+    }
+
+    .sign__up form .input__wrapper input,
+    .sign__in form .input__wrapper input,
+    .sign__code form .input__wrapper input,
+    .sign__nickname form .input__wrapper input {
+        min-height: 40px;
+        padding: 10px;
+    }
+
+    .sign__up form button.signup__next,
+    .sign__in form button,
+    .sign__code form button,
+    .sign__nickname form button {
+        min-height: 40px;
+        font-size: 0.875rem;
+    }
+
+    .sign__up .sign__ch,
+    .sign__in .sign__ch,
+    .sign__code .sign__ch,
+    .sign__nickname .sign__ch {
+        font-size: 0.75rem;
+    }
+
+    .sign__up .sign__ch button,
+    .sign__in .sign__ch button,
+    .sign__code .sign__ch button,
+    .sign__nickname .sign__ch button {
+        font-size: 0.75rem;
+    }
+
+    .sign__up .pass__reSetting,
+    .sign__in .pass__reSetting,
+    .sign__code .pass__reSetting,
+    .sign__nickname .pass__reSetting {
+        font-size: 0.75rem;
+    }
+
+    .sign__conditions {
+        font-size: 0.75rem;
+        bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .sign__inner {
+        max-width: 90%;
+        height: 90%;
+    }
+
+    .sign__up,
+    .sign__in,
+    .sign__code,
+    .sign__nickname {
+        margin: 0 30px;
+        padding: 40px 0;
+    }
+
+    .sign__up h3,
+    .sign__in h3,
+    .sign__code h3,
+    .sign__nickname h3 {
+        top: 30px;
+        left: 20px;
+    }
+
+    .sign__up .sign__comment,
+    .sign__in .sign__comment,
+    .sign__code .sign__comment,
+    .sign__nickname .sign__comment {
+        font-size: 0.75rem;
+    }
+
+    .sign__up form .input__wrapper,
+    .sign__in form .input__wrapper,
+    .sign__code form .input__wrapper,
+    .sign__nickname form .input__wrapper {
+        margin-bottom: 10px;
+    }
+
+    .sign__up form .input__wrapper input,
+    .sign__in form .input__wrapper input,
+    .sign__code form .input__wrapper input,
+    .sign__nickname form .input__wrapper input {
+        min-height: 35px;
+        padding: 8px;
+    }
+
+    .sign__up form button.signup__next,
+    .sign__in form button,
+    .sign__code form button,
+    .sign__nickname form button {
+        min-height: 35px;
+        font-size: 0.75rem;
+    }
+
+    .sign__up .sign__ch,
+    .sign__in .sign__ch,
+    .sign__code .sign__ch,
+    .sign__nickname .sign__ch {
+        font-size: 0.65rem;
+    }
+
+    .sign__up .sign__ch button,
+    .sign__in .sign__ch button,
+    .sign__code .sign__ch button,
+    .sign__nickname .sign__ch button {
+        font-size: 0.75rem;
+    }
+
+    .sign__up .pass__reSetting,
+    .sign__in .pass__reSetting,
+    .sign__code .pass__reSetting,
+    .sign__nickname .pass__reSetting {
+        font-size: 0.65rem;
+    }
+
+    .sign__conditions {
+        font-size: 0.65rem;
+        bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .sign__inner {
+        max-width: 90%;
+        height: 90%;
+    }
+
+    .sign__up,
+    .sign__in,
+    .sign__code,
+    .sign__nickname {
+        margin: 0 20px;
+        padding: 30px 0;
+    }
+
+    .sign__up h3,
+    .sign__in h3,
+    .sign__code h3,
+    .sign__nickname h3 {
+        top: 20px;
+        left: 20px;
+    }
+
+    .sign__up .sign__comment,
+    .sign__in .sign__comment,
+    .sign__code .sign__comment,
+    .sign__nickname .sign__comment {
+        font-size: 0.65rem;
+    }
+
+    .sign__up form .input__wrapper,
+    .sign__in form .input__wrapper,
+    .sign__code form .input__wrapper,
+    .sign__nickname form .input__wrapper {
+        margin-bottom: 5px;
+    }
+
+    .sign__up form .input__wrapper input,
+    .sign__in form .input__wrapper input,
+    .sign__code form .input__wrapper input,
+    .sign__nickname form .input__wrapper input {
+        min-height: 30px;
+        padding: 5px;
+    }
+
+    .sign__up form button.signup__next,
+    .sign__in form button,
+    .sign__code form button,
+    .sign__nickname form button {
+        min-height: 30px;
+        font-size: 0.65rem;
+    }
+
+    .sign__up .sign__ch,
+    .sign__in .sign__ch,
+    .sign__code .sign__ch,
+    .sign__nickname .sign__ch {
+        font-size: 0.55rem;
+    }
+
+    .sign__up .sign__ch button,
+    .sign__in .sign__ch button,
+    .sign__code .sign__ch button,
+    .sign__nickname .sign__ch button {
+        font-size: 0.65rem;
+    }
+
+    .sign__up .pass__reSetting,
+    .sign__in .pass__reSetting,
+    .sign__code .pass__reSetting,
+    .sign__nickname .pass__reSetting {
+        font-size: 0.55rem;
+    }
+
+    .sign__conditions {
+        font-size: 0.55rem;
+        bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .sign__inner {
+        max-width: 90%;
+        height: 90%;
+    }
+
+    .sign__up,
+    .sign__in,
+    .sign__code,
+    .sign__nickname {
+        margin: 0 10px;
+        padding: 20px 0;
+    }
+
+    .sign__up h3,
+    .sign__in h3,
+    .sign__code h3,
+    .sign__nickname h3 {
+        top: 10px;
+        left: 10px;
+    }
+
+    .sign__up .sign__comment,
+    .sign__in .sign__comment,
+    .sign__code .sign__comment,
+    .sign__nickname .sign__comment {
+        font-size: 0.55rem;
+    }
+
+    .sign__up form .input__wrapper,
+    .sign__in form .input__wrapper,
+    .sign__code form .input__wrapper,
+    .sign__nickname form .input__wrapper {
+        margin-bottom: 3px;
+    }
+
+    .sign__up form .input__wrapper input,
+    .sign__in form .input__wrapper input,
+    .sign__code form .input__wrapper input,
+    .sign__nickname form .input__wrapper input {
+        min-height: 25px;
+        padding: 3px;
+    }
+
+    .sign__up form button.signup__next,
+    .sign__in form button,
+    .sign__code form button,
+    .sign__nickname form button {
+        min-height: 25px;
+        font-size: 0.55rem;
+    }
+
+    .sign__up .sign__ch,
+    .sign__in .sign__ch,
+    .sign__code .sign__ch,
+    .sign__nickname .sign__ch {
+        font-size: 0.45rem;
+    }
+
+    .sign__up .sign__ch button,
+    .sign__in .sign__ch button,
+    .sign__code .sign__ch button,
+    .sign__nickname .sign__ch button {
+        font-size: 0.55rem;
+    }
+
+    .sign__up .pass__reSetting,
+    .sign__in .pass__reSetting,
+    .sign__code .pass__reSetting,
+    .sign__nickname .pass__reSetting {
+        font-size: 0.45rem;
+    }
+
+    .sign__conditions {
+        font-size: 0.45rem;
+        bottom: 5px;
     }
 }

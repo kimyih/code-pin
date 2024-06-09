@@ -141,6 +141,7 @@
     left: 0;
     z-index: 2000;
     align-content: center;
+    /* display: none; */
 
     .modal__container {
         display: flex;
