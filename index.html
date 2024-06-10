@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <header id="header">
         <div class="container">
             <div class="logo">
@@ -186,8 +187,8 @@
                     <!-- //edit__btn 이미지 hover시 아이콘 -->
 
                     <div class="edit_modal_container">
-                        <div class="edit__menu">
-                            <div class="edit__code">
+                        <div class="edit__modal">
+                            <div class="menu__code">
                                 <img src="/assets/img/icon_category_grey.webp" alt="">
                                 <p class="edit__text">코드편집</p>
                             </div>
@@ -258,7 +259,7 @@
         <div class="modal__container mt100">
             <div class="edit__container">
                 <div class="edit__top">
-                    <div class="edut__menu">
+                    <div class="edit__menu">
                         <div class="edit__code">
                             <p>코드편집</p>
                         </div>
@@ -389,10 +390,43 @@
             COPYRIGHT © Codepin. All Rights Reserved.
         </div>
     </footer>
+
+
     <script src="/assets/script/jquery-3.6.0.min.js"></script>
     <script src="/assets/script/sign.js"></script>
     <script src="/assets/script/header.js"></script>
     <script src="assets/script/out_container.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // 메뉴 코드 요소와 모달 컨테이너 선택
+            const menuCode = document.querySelector('.menu__code');
+            const modalOutcontainer = document.getElementById('modal__outcontainer');
+
+            // menu__code 요소에 클릭 이벤트 리스너 추가
+            menuCode.addEventListener('click', function () {
+                // modal__outcontainer 보이게 설정
+                modalOutcontainer.style.display = 'block';
+            });
+
+            // 문서의 바깥 영역 클릭 시 모달 숨기기
+            document.addEventListener('click', function (event) {
+                // 클릭된 요소가 modal__outcontainer 내부가 아니고, menu__code도 아닐 때
+                if (!modalOutcontainer.contains(event.target) && !menuCode.contains(event.target)) {
+                    modalOutcontainer.style.display = 'none';
+                }
+            });
+
+            // 모달 내부 클릭 시 이벤트 버블링 방지
+            modalOutcontainer.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        });
+
+    </script>
+
+
+
+
 </body>
 
 </html>
