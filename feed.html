@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodePin</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <div class="logo">
+                <a href="#">
+                    <h1>COD<em>E</em>PIN</h1>
+                </a>
+            </div>
+            <div id="selector">
+                <button id="code__selector" class="active">HOME</button>
+                <button id="folder__selector">FOLDER</button>
+                <button id="code__selector">FEED</button>
+            </div>
+            <button class="login">Login</button>
+            <div class="profile-popup">
+                <div class="profile-popup-content">
+                    <p class="user-email">[유저 이메일]</p>
+                    <div class="profile-info">
+                        <img src="assets/img/default.jpg" alt="프로필 이미지">
+                    </div>
+                    <div class="user-name-container">
+                        <p id="you_name">닉네임</p>
+                        <button id="changeNameBtn" onclick="changeName()">이름 변경</button>
+                        <div class="name-edit-buttons" style="display: none;">
+                            <button onclick="saveName()">변경</button>
+                            <button onclick="cancelChange()">취소</button>
+                        </div>
+                    </div>
+                    <button id="logoutBtn" class="logout">
+                        <img src="assets/icon/exit.svg" alt="로그아웃 아이콘">
+                        로그아웃
+                    </button>
+                </div>
+            </div>
+            <div class="overlay"></div>
+            <div id="sign__wrap">
+                <div class="sign__inner">
+                    <button class="sign__close"></button>
+                    <div class="form__container">
+                        <div class="sign__in">
+                            <h3 data-text="sign in">Sign in</h3>
+                            <span class="sign__comment"><em>코드핀</em>에 로그인 하고 다양한 코드를 저장해보세요!</span>
+                            <form id="signin__Form" action="signin.php" name="signin" method="post">
+                                <div class="input__wrapper">
+                                    <input type="text" name="signin__Email" id="signin__Email" class="input__field"
+                                        autocomplete="off" required>
+                                    <div class="input__placeholder">이메일</div>
+                                    <p class="msg" id="signin__Email__comment"></p>
+                                </div>
+                                <div class="input__wrapper">
+                                    <input type="password" name="signin__Pass" id="signin__Pass" class="input__field"
+                                        autocomplete="off" required>
+                                    <div class="input__placeholder">비밀번호</div>
+                                    <p class="msg" id="signin__Pass__comment"></p>
+                                </div>
+                                <button type="submit" class="signin__btn">로그인</button>
+                            </form>
+                            <div class="upch__wr sign__ch">계정이 없으신가요?<button class="upch__btn">회원가입</button></div>
+                            <a class="pass__reSetting" href="signpassword.php">비밀번호 찾기</a>
+                        </div>
+                        <div class="sign__up">
+                            <h3 data-text="sign up">Sign up</h3>
+                            <div class="signup__next 1">
+                                <form id="signup__Form" action="signup.php" name="signup" method="post"
+                                    onsubmit="return signupChecks()">
+                                    <div class="input__wrapper">
+                                        <input type="email" name="signup__Email" id="signup__Email" class="input__field"
+                                            autocomplete="off" required>
+                                        <div class="input__placeholder">이메일</div>
+                                        <p class="msg" id="signup__Email__comment"></p>
+                                    </div>
+                                    <div class="input__wrapper">
+                                        <input type="password" name="signup__Pass" id="signup__Pass"
+                                            class="input__field" autocomplete="off" required>
+                                        <div class="input__placeholder">비밀번호</div>
+                                        <p class="msg" id="signup__Pass__comment"></p>
+                                    </div>
+                                    <div class="input__wrapper">
+                                        <label for="signup__PassC" class="hidden">password checking</label>
+                                        <input type="password" name="signup__PassC" id="signup__PassC"
+                                            class="input__field" autocomplete="off" required>
+                                        <div class="input__placeholder">비밀번호 확인</div>
+                                        <p class="msg" id="signup__PassC__comment"></p>
+                                    </div>
+                                    <button type="submit" class="signup__next">다음</button>
+                                </form>
+                            </div>
+                            <button type="submit" id="signup__btn" class="hidden">회원가입</button>
+                            <div class="inch__wr sign__ch">계정이 있으신가요?<button class="inch__btn">로그인</button></div>
+                        </div>
+                        <div class="sign__code">
+                            <h3 data-text="sign up">Sign up</h3>
+                            <span class="sign__comment">이메일<em>인증코드</em>를 입력해주세요!</span>
+                            <form id="signup__CodeForm" action="signup.php" name="signup_code" method="post">
+                                <div class="input__wrapper">
+                                    <input type="text" name="signup__Code" id="signup__Code" class="input__field"
+                                        autocomplete="off" required>
+                                    <div class="input__placeholder">인증코드를 입력해주세요.</div>
+                                    <p class="msg" id="signup__Code__comment"></p>
+                                </div>
+                                <button type="submit" class="continue__btn">계속</button>
+                            </form>
+                            <div class="inch__wr sign__ch">계정이 있으신가요?<button class="inch__btn">로그인</button></div>
+                        </div>
+                        <div class="sign__nickname">
+                            <h3 data-text="sign up">Sign up</h3>
+                            <span class="sign__comment">사용하실 <em>닉네임</em>혹은 <em>이름</em>을 적어주세요!</span>
+                            <form id="signup__NicknameForm" action="signup.php" name="signup_nickname" method="post">
+                                <div class="input__wrapper">
+                                    <input type="text" name="signup__Nickname" id="signup__Nickname"
+                                        class="input__field" autocomplete="off" required>
+                                    <div class="input__placeholder">닉네임 및 이름을 적어주세요.</div>
+                                    <p class="msg" id="signup__Nickname__comment"></p>
+                                </div>
+                                <button type="submit" class="continue__btn">가입 완료</button>
+                            </form>
+                            <div class="inch__wr sign__ch">계정이 있으신가요?<button class="inch__btn">로그인</button></div>
+                        </div>
+                    </div>
+                    <span class="sign__conditions"><a href="#">이용약관</a> 및 <a href="#">개인정보</a> 취급방침에 동의하고 시작합니다.</span>
+                </div>
+                <div class="common_password_strength_check_box">
+                    <div class="common_close_password_strength_check_box"></div>
+                    <div class="common_password_condition_text_box common_password_condition_first">
+                        <span class="common_password_condition_icon"></span>8자 이상 입력
+                    </div>
+                    <div class="common_password_condition_text_box common_password_condition_second">
+                        <span class="common_password_condition_icon"></span>특수문자 1개 이상의 조합
+                    </div>
+                    <div class="common_password_condition_text_box common_password_condition_third">
+                        <span class="common_password_condition_icon"></span>최소 1개 이상의 숫자
+                    </div>
+                    <div class="common_password_strength_gage_wrapper">
+                        <p>비밀번호 보안성</p>
+                        <div class="common_password_strength_gage">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main id="feedmain">
+        <div class="container">
+            <div class="feed_main">
+                <div class="manager">
+                    <div class="main_top">
+                        <div class="manager_profile_custom">
+                            <img src="assets/img/manager_img.png" alt="Manager Profile">
+                        </div>
+                        <div class="manager_name_write">
+                            <div class="manager_name">
+                                <h3>관리자</h3>
+                            </div>
+                            <div class="write_button">
+                                <h4>작성하기</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="manager_feed">
+                        <p>안녕하세요. CODEPIN 관리자입니다! :blush: 새로운 기능들을 확인해보세요! 여러분의 피드백을 기다립니다. 항상 즐거운 코딩 되세요! :rocket:</p>
+                    </div>
+                    <div class="manager_notice">
+                        <p>이곳은 다양한 개발자들이 코드, 아이디어, 그리고 유용한 정보를 공유하는 공간입니다. 새로운 기술 트렌드를 배우고, 동료 개발자들과 소통하며, 나만의 프로젝트를
+                            성장시켜 보세요!</p>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="top">
+                        <div class="profile">
+                            <img src="assets/img/default.jpg" alt="Profile">
+                        </div>
+                        <div class="name">김개발자</div>
+                        <div class="time">2024-06-05 05:07:50</div>
+                    </div>
+                    <div class="feeds">
+                        <p>좋은 코드를 발견해서 공유합니다. 이런이런 상황일 때 쓰면 좋을 거 같아요.</p>
+                    </div>
+                    <div class="imgbox">
+                        <img src="assets/img/default.jpg" alt="샘플 이미지">
+                    </div>
+                    <div class="bottom">
+                        <div class="icon">
+                            <div class="comment">
+                                <img src="assets/icon/comment.svg" alt="Comment">
+                                <p>3</p>
+                            </div>
+                            <div class="like">
+                                <img src="assets/icon/like.svg" alt="Like">
+                                <p>20</p>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <a href="#">[수정하기]</a>
+                            <a href="#">[삭제하기]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cont">
+                    <div class="top">
+                        <div class="profile">
+                            <img src="assets/img/default.jpg" alt="Profile">
+                        </div>
+                        <div class="name">김개발자</div>
+                        <div class="time">2024-06-05 05:07:50</div>
+                    </div>
+                    <div class="feeds">
+                        <p>좋은 코드를 발견해서 공유합니다. 이런이런 상황일 때 쓰면 좋을 거 같아요.</p>
+                    </div>
+                    <div class="imgbox">
+                        <img src="assets/img/default.jpg" alt="샘플 이미지">
+                    </div>
+                    <div class="bottom">
+                        <div class="icon">
+                            <div class="comment">
+                                <img src="assets/icon/comment.svg" alt="Comment">
+                                <p>3</p>
+                            </div>
+                            <div class="like">
+                                <img src="assets/icon/like.svg" alt="Like">
+                                <p>20</p>
+                            </div>
+                        </div>
+                        <div class="btn">
+                            <a href="#">[수정하기]</a>
+                            <a href="#">[삭제하기]</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="pagination">
+                    <span class="arrow">&lt;</span>
+                    <span class="page active">1</span>
+                    <span class="page">2</span>
+                    <span class="page">3</span>
+                    <span class="page">4</span>
+                    <span class="page">5</span>
+                    <span class="arrow">&gt;</span>
+                </div>
+            </div>
+            <aside class="aside">
+                <div class="recommend">
+                    <h1><img src="assets/icon/best.svg" alt="인기글">이번 주 인기 글</h1>
+                    <p>파이썬 처음 배우세요? 이 글에서 기초 문법을 깔끔하게 정리했어요. 입문자분들께 강력 추천합니다!</p>
+                    <p>자바스크립트로 간단한 웹 앱을 만들어 봤어요. 코드 예제와 함께 상세하게 설명했으니, 따라 해보세요!</p>
+                    <p>데이터 분석을 처음 해보시나요? 판다스를 이용해 기본적인 데이터 분석을 어떻게 하는지 알려드립니다. 실습 예제도 있어요!</p>
+                    <p>C++의 STL, 어떻게 느껴지시죠? 제가 쉽게 설명해 드릴게요. 예제 코드도 있으니 따라 해보세요!</p>
+                    <p>멋진 포트폴리오 사이트를 만들고 싶으신가요? HTML과 CSS만으로 깔끔하게 만드는 방법을 공유합니다. 디자인 팁도 드려요!</p>
+                </div>
+                <div class="good_site">
+                    <h1><img src="assets/icon/Internet.svg" alt="추천 사이트">개발자 추천 사이트</h1>
+                    <div class="icons">
+                        <div class="icon-item">
+                            <img src="assets/icon/github.svg" alt="GitHub">
+                            <div class="explanation">
+                                <a href="#">GitHub</a>
+                                <p>A platform where developers collaborate on code and manage projects.</p>
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="assets/icon/codepen.svg" alt="CodePen">
+                            <div class="explanation">
+                                <a href="#">CodePen</a>
+                                <p>An online code editor and community for front-end web designers and developers.</p>
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="assets/icon/stackoverflow.svg" alt="Stack Overflow">
+                            <div class="explanation">
+                                <a href="#">Stack Overflow</a>
+                                <p>The largest online community for programmers to ask and answer questions.</p>
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="assets/icon/mdnwebdocs.svg" alt="MDN Web Docs">
+                            <div class="explanation">
+                                <a href="#">MDN Web Docs</a>
+                                <p>A comprehensive resource for web documentation and learning.</p>
+                            </div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="assets/icon/w3schools.svg" alt="W3Schools">
+                            <div class="explanation">
+                                <a href="#">W3Schools</a>
+                                <p>An educational website offering tutorials and references on web development
+                                    languages.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <!-- 작성 팝업 -->
+        <div class="feed_popup">
+            <div class="popup_top">
+                <div class="profile">
+                    <img src="assets/img/default.jpg" alt="Profile">
+                    <div class="name">개발자1</div>
+                </div>
+                <button class="submit_button">게시하기</button>
+            </div>
+            <div class="popup_body">
+                <textarea placeholder="내용을 입력해주세요!"></textarea>
+                <div class="image_upload">
+                    <span>이미지를 업로드하세요</span>
+                </div>
+            </div>
+        </div>
+        <div class="popup_overlay"></div>
+        <!-- 댓글 팝업 -->
+        <div id="feedCommentPopup" class="feed-comment-popup">
+            <div class="feed-comment-popup-content">
+                <span class="feed-comment-popup-close" onclick="closeCommentPopup()">&times;</span>
+                <div class="feed-comment-popup-body">
+                    <img id="popupImage" src="assets/img/default.jpg" alt="게시글 이미지">
+                    <div class="feed-comment-input">
+                        <div id="commentsSection" class="comments-section">
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자1</span>
+                                        <span class="comment-time">5분 전</span>
+                                    </div>
+                                    <p>좋은 글 감사합니다!</p>
+                                </div>
+                            </div>
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자2</span>
+                                        <span class="comment-time">10분 전</span>
+                                    </div>
+                                    <p>유용한 정보네요.</p>
+                                </div>
+                            </div>
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자3</span>
+                                        <span class="comment-time">30분 전</span>
+                                    </div>
+                                    <p>잘 보고 갑니다.</p>
+                                </div>
+                            </div>
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자4</span>
+                                        <span class="comment-time">1시간 전</span>
+                                    </div>
+                                    <p>많은 도움이 되었습니다.</p>
+                                </div>
+                            </div>
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자5</span>
+                                        <span class="comment-time">2시간 전</span>
+                                    </div>
+                                    <p>정말 유용하네요.</p>
+                                </div>
+                            </div>
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자6</span>
+                                        <span class="comment-time">3시간 전</span>
+                                    </div>
+                                    <p>감사합니다!</p>
+                                </div>
+                            </div>
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자6-1</span>
+                                        <span class="comment-time">3시간 전</span>
+                                    </div>
+                                    <p>감사합니다!</p>
+                                </div>
+                            </div>
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자7</span>
+                                        <span class="comment-time">4시간 전</span>
+                                    </div>
+                                    <p>좋은 글이네요.</p>
+                                </div>
+                            </div>
+                            <div class="comment-row">
+                                <img src="assets/img/default.jpg" alt="프로필 이미지">
+                                <div class="comment-content">
+                                    <div class="comment-content-header">
+                                        <span class="comment-name">댓글 작성자8</span>
+                                        <span class="comment-time">5시간 전</span>
+                                    </div>
+                                    <p>유익한 정보 감사합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feed-comment-input-row">
+                            <input type="text" id="commentInput" placeholder="댓글달기">
+                            <button onclick="submitComment()">게시</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/script/jquery-3.6.0.min.js"></script>
+    <script src="assets/script/sign.js"></script>
+    <script src="assets/script/feed.js"></script>
+</body>
+
+</html>
