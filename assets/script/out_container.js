@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+
 // modal__outcontainer (편집 모달창 탭 3개 있는 것) 외부 클릭시 팝업 닫히는 스크립트
 document.addEventListener('DOMContentLoaded', function () {
     const modalOutcontainer = document.getElementById('modal__outcontainer');

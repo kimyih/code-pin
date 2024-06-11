@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     background-color: var(--black100);
+    font-family: var(--fontF);
 
     h2 {
         text-align: center;
