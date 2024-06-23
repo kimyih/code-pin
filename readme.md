@@ -45,20 +45,18 @@ __CodePin__ 이라는 브랜드 이름에는 __코드(Code)__ 와 __핀(Pin)__ �
 
 #### 로고 디자인 후보
 
-<img src="https://github.com/sunhew/CodePin/assets/161446039/9359470c-9920-4445-938c-8a67fb0049bd" alt="image 43" width="100"/>
-<img src="https://github.com/sunhew/CodePin/assets/161446039/82a50491-737b-45d7-b3ad-7e545e0ef327" alt="image 46" width="100"/>
-<img src="https://github.com/sunhew/CodePin/assets/161446039/65b60a12-54ee-4575-bed4-2e2d7190ea23" alt="image 44" width="100"/>
-<img src="https://github.com/sunhew/CodePin/assets/161446039/4ac3ae94-2647-4824-8bdc-0a47f3abf61d" alt="image 45" width="100"/>
-<img src="https://github.com/sunhew/CodePin/assets/161446039/26aaa398-e689-4b50-8486-3b3dcea96cee" alt="image 47" width="100"/>
-<img src="https://github.com/sunhew/CodePin/assets/161446039/5acf1383-7ef6-4966-9e61-4e8126791518" alt="image 50" width="100"/>
-<img src="https://github.com/sunhew/CodePin/assets/161446039/34283696-33a6-421a-9e63-2a330270422b" alt="image 48" width="100"/>
-<img src="https://github.com/sunhew/CodePin/assets/161446039/b59033cb-33f5-48cb-99ed-9a5d1adf1161" alt="image 49" width="100"/>
+<img src="https://github.com/kimyih/kimyih/assets/163376151/6d223bae-d9ff-48a2-8c4f-66733ca7d7d9" alt="image 43" width="100"/>
+<img src="https://github.com/kimyih/kimyih/assets/163376151/81769d9d-4520-490a-b402-a8e16ad5f31d" alt="image 46" width="100"/>
+<img src="https://github.com/kimyih/kimyih/assets/163376151/061b6d42-69b5-4f5f-b77a-d54c9e50f6d9" alt="image 44" width="100"/>
+<img src="https://github.com/kimyih/kimyih/assets/163376151/9ece07f7-e827-422d-bf58-150e68d69f7d" alt="image 45" width="100"/>
+<img src="https://github.com/kimyih/kimyih/assets/163376151/b541eb83-1b89-4513-b259-3f8035e0d739" alt="image 47" width="100"/>
+
 
 
 ### 색상
 심플하면서도 깔끔한 느낌을 내기 위해 여러 색 조합을 시도하고 저희만의 색상 팔렛트를 완성했습니다.
 
-<img src="https://github.com/sunhew/CodePin/assets/161446039/e2949964-f6b7-48b5-a1fd-5b1b3b593b24" alt="image 49" width="500"/>
+<img src="https://github.com/kimyih/kimyih/assets/163376151/cba24a9d-e874-4598-a039-5de077613ac5" alt="image 49" width="500"/>
 
 ---
 
